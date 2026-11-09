@@ -1,0 +1,39 @@
+{
+  "name": "@claptrapedia/schema",
+  "description": "Shared Zod schemas and inferred TypeScript types for the Claptrapedia ecosystem.",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=26.13"
+  },
+  "packageManager": "pnpm@12.18.0",
+  "files": [
+    "dist"
+  ],
+  "imports": {},
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "pnpm clean && tsc",
+    "lint": "eslint src --no-error-on-unmatched-pattern --quiet",
+    "lint:fix": "eslint src --no-error-on-unmatched-pattern --quiet --fix",
+    "check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "eslint-plugin-perfectionist": "^5.13.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2",
+    "zod": "^4.6.7"
+  }
+}
