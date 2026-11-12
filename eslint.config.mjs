@@ -66,9 +66,28 @@ export default [eslint.configs.recommended, ...tseslint.configs.recommended, {
         "type-internal",
         "builtin",
         "external",
+        "src-group",
+        "shared-group",
+        "games-group",
         ["parent", "sibling", "index"],
       ],
-      customGroups: [],
+      customGroups: [
+        {
+          groupName: "src-group",
+          modifiers: ["value"],
+          elementNamePattern: "^#src$",
+        },
+        {
+          groupName: "shared-group",
+          modifiers: ["value"],
+          elementNamePattern: "^#shared(/.*)?$",
+        },
+        {
+          groupName: "games-group",
+          modifiers: ["value"],
+          elementNamePattern: "^#games(/.*)?$",
+        },
+      ],
     }],
     "perfectionist/sort-named-imports": ["error", {
       type: "alphabetical",

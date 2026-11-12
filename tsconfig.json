@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES2025",
     "lib": ["ES2025"],
+    "types": ["node"],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "strict": true,
@@ -16,7 +17,14 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true
+    "exactOptionalPropertyTypes": true,
+    "paths": {
+      "#src": ["./src/schemas/index.ts"],
+      "#shared": ["./src/schemas/shared/index.ts"],
+      "#shared/*": ["./src/schemas/shared/*"],
+      "#games": ["./src/schemas/games/index.ts"],
+      "#games/*": ["./src/schemas/games/*"],
+    }
   },
   "include": ["src"]
 }

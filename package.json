@@ -9,12 +9,28 @@
   "packageManager": "pnpm@12.18.0",
   "files": [
     "dist"
-  ],
-  "imports": {},
+  ],"imports": {
+    "#src": "./dist/schemas/index.js",
+    "#shared": "./dist/schemas/shared/index.js",
+    "#shared/*": "./dist/schemas/shared/*",
+    "#games": "./dist/schemas/games/index.js",
+    "#games/*": "./dist/schemas/games/*"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./schemas": {
+      "types": "./dist/schemas/index.d.ts",
+      "import": "./dist/schemas/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts"
+    },
+    "./validation": {
+      "types": "./dist/validation/index.d.ts",
+      "import": "./dist/validation/index.js"
     }
   },
   "main": "./dist/index.js",
