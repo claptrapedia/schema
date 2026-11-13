@@ -19,7 +19,7 @@
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "paths": {
-      "#src": ["./src/schemas/index.ts"],
+      "#~": ["./src/schemas/index.ts"],
       "#shared": ["./src/schemas/shared/index.ts"],
       "#shared/*": ["./src/schemas/shared/*"],
       "#games": ["./src/schemas/games/index.ts"],

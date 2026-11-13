@@ -9,8 +9,9 @@
   "packageManager": "pnpm@12.18.0",
   "files": [
     "dist"
-  ],"imports": {
-    "#src": "./dist/schemas/index.js",
+  ],
+  "imports": {
+    "#~": "./dist/schemas/index.js",
     "#shared": "./dist/schemas/shared/index.js",
     "#shared/*": "./dist/schemas/shared/*",
     "#games": "./dist/schemas/games/index.js",

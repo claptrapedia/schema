@@ -75,7 +75,7 @@ export default [eslint.configs.recommended, ...tseslint.configs.recommended, {
         {
           groupName: "src-group",
           modifiers: ["value"],
-          elementNamePattern: "^#src$",
+          elementNamePattern: "^#~$",
         },
         {
           groupName: "shared-group",
