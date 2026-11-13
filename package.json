@@ -38,10 +38,12 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "pnpm clean && tsc",
+    "check": "Status=0; pnpm lint || Status=1; pnpm build || Status=1; pnpm check:cycles || Status=1; pnpm check:runtime || Status=1; exit $Status",
+    "check:cycles": "madge --circular --extensions ts --ts-config tsconfig.json --warning src",
+    "check:runtime": "node --enable-source-maps --input-type=module -e \"import '@claptrapedia/schema/schemas';\"",
+    "clean": "rm -rf dist",
     "lint": "eslint src --no-error-on-unmatched-pattern --quiet",
-    "lint:fix": "eslint src --no-error-on-unmatched-pattern --quiet --fix",
-    "check": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "lint:fix": "eslint src --no-error-on-unmatched-pattern --quiet --fix"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -49,6 +51,7 @@
     "@types/node": "^26.6.6",
     "eslint": "^10.14.0",
     "eslint-plugin-perfectionist": "^5.13.0",
+    "madge": "^8.0.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.2",
     "zod": "^4.6.7"
